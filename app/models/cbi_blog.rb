@@ -1,0 +1,2 @@
+class CbiBlog < ApplicationRecord
+end

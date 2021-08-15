@@ -1,10 +1,16 @@
 class HomeController < ApplicationController
     def index
         @var = 'index'
+        @table = CbiBlog.all
     end
  
     def create
         @var = "create"
+        @new = CbiBlog.new
+    end
+
+    def create_prog
+        
     end
  
     def update

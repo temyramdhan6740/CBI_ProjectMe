@@ -1,1 +1,62 @@
-<%= @var %>
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Home</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <%= link_to root_path do 'Home' end %>
+                    </li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="content container-fluid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Blog</h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th style="width: 10px">#</th>
+                                    <th>Title</th>
+                                    <th>Desc</th>
+                                    <th colspan="2"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @table.each_with_index do |data, no| %>
+                                <tr>
+                                    <td><%= no+=1 %></td>
+                                    <td><%= data.blog_title %></td>
+                                    <td><%= data.blog_desc %></td>
+                                    <td class="bg-info text-center p-0 px-1 pt-1">
+                                        <%= link_to create_path(data.id) do %>
+                                            <i class="fas fa-pen"></i>
+                                        <% end %>
+                                    </td>
+                                    <td class="bg-danger text-center p-0 px-1 pt-1">
+                                        <%= link_to create_path(data.id) do %>
+                                            <i class="fas fa-trash"></i>
+                                        <% end %>
+                                    </td>
+                                </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
