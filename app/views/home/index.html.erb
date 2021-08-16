@@ -17,6 +17,13 @@
 
 <div class="content container-fluid">
     <div class="container-fluid">
+        
+        <% if notice %>
+            <div class="alert alert-success">
+            <%= notice %>
+            </div>
+        <% end %>
+
         <div class="row">
             <div class="col-md-5">
                 <div class="card">
@@ -40,12 +47,12 @@
                                     <td><%= data.blog_title %></td>
                                     <td><%= data.blog_desc %></td>
                                     <td class="bg-info text-center p-0 px-1 pt-1">
-                                        <%= link_to create_path(data.id) do %>
+                                        <%= link_to edit_path(data.blog_id) do %>
                                             <i class="fas fa-pen"></i>
                                         <% end %>
                                     </td>
                                     <td class="bg-danger text-center p-0 px-1 pt-1">
-                                        <%= link_to create_path(data.id) do %>
+                                        <%= link_to destroyProgress_path(data.id), data: { confirm: 'Want to delete ?' }, method: :delete do %>
                                             <i class="fas fa-trash"></i>
                                         <% end %>
                                     </td>

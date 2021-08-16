@@ -27,8 +27,7 @@
                         <h3 class="card-title">Create new Blog</h3>
                     </div>
 
-                    <%= form_for (@new), url: createProgress_path do |f| %>
-                    <%= f.hidden_field :blog_id, value: @rand %>
+                    <%= form_for (@id), url: updateProgress_path do |f| %>
                     <div class="card-body">
                         
                         <div class="form-group">
